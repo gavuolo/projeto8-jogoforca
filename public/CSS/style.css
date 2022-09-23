@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;700&display=swap');
 *{
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 h1{
     text-align: center;
-    font-size: 60px;
+    font-size: 50px;
     margin-bottom: 60px;
+    margin-top: 60px;
+    font-weight: 400;
 }
 .topbar{
   width: 100%;
@@ -15,28 +19,27 @@ h1{
 }
 
 .forca{
-    width: 50%;
-
+    width: 40%;
 }
 
 .palavra{
     width: 30%;
     height: 500px;
-    position: relative;
+    display: block;
+    text-align: center;
+
 }
 .palavra p {
     font-size: 40px;
-    position: absolute;
-    margin: 0;
-    top: 50%;
-    bottom: 0;
+    margin-top: 20%;
+    
 }
 .topbar img{
     width: 500px;
     height: 500px;
 }
 .escolher{
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50; 
     border: none;
     color: white;
     padding: 15px 32px;
@@ -44,7 +47,67 @@ h1{
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    font-weight: 700;
     border-radius: 10px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 20%;
+}
+
+
+.bottom{
+    width: 40%;;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.botao{
+  background-color: rgba(5, 5, 5, 0.05);
+  border-radius: 8px;
+  border-width: 0;
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 10px 12px;
+  text-align: center;
+  transition: all 200ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  margin: 1%;
+}
+
+.input{
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+.enviar{
+    width: 40px;
+    height: 50px;
+    background-color: rgba(76, 175, 80, 0.9);
+    border-radius: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+.enviar:hover{
+    background-color: #4CAF50;
+    
+}
+input{
+    width: 500px;
+    height: 50px;
+    outline: 0
+    
 }
