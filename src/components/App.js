@@ -25,6 +25,8 @@ export default function App() {
     const [chute, setChute] = useState([])
     const [erros, setErros] = useState(0)
     const [imagem, setImagem] = useState(forca0)
+    const [letraCerta, setLetraCerta] = useState([])
+
 
     function comecar() {
         setStart(!isStart)
@@ -42,40 +44,54 @@ export default function App() {
 
     function clicou(letraClicada) {
 
-
-
-        console.log(palavra)
-        console.log(arrayLetra)
-
         let arrayClicado = clicado.includes(letraClicada) ? clicado : [...clicado, letraClicada];
         setClicado(arrayClicado)
+        console.log(arrayClicado)
+        console.log(palavra)
+        let ponto = arrayLetra.includes(letraClicada) ? setLetraCerta([...letraCerta, letraClicada]) : setErros(erros + 1)
 
-        //let letraCerta = arrayLetra.includes(letraClicada) ? "a" : 
-        //console.log(clicado)
-        let ponto = arrayLetra.includes(letraClicada) ? "acertou" : setErros(erros + 1)
+        //comparaLetra(letraClicada)
+
     }
+    //function comparaLetra(letraClicada){
+    //    if(letraClicada === arrayLetra){
+    //       return "acertou"
+    // }
+    //}
 
     //input
     function chutarPalavra() {
         if (palavra === chute) {
             console.log("acertou")
         } else {
-            console.log("nao acertou")
+            setErros(6)
         }
-        //setChute([])
-
     }
 
 
     function Botao() {
-        return (
-            <div className="bottom">
-                {alfabeto.map((l, index) =>
-                    <button key={index} className={clicado.includes(l) ? "selecionado" : "botao"} onClick={() => clicou(l)}>
-                        {l.toUpperCase()}
-                    </button>)}
-            </div>
-        )
+
+        if (!isStart) {
+            return (
+                <div className="bottom">
+                    {alfabeto.map((l) =>
+                        <button key={l} className="botao botao-desabilitado">
+                            {l.toUpperCase()}
+                        </button>)}
+                </div>
+            )
+        } else {
+            return (
+                <div className="bottom">
+                 {alfabeto.map((l) => 
+                 <button key={l} className={clicado.includes(l) ? "selecionado" : "botao"} onClick={() => clicou(l)}>
+                    {l.toUpperCase()}
+                </button>)}
+                </div>
+            )
+        }
+
+
     }
 
     function Forca() {
@@ -94,6 +110,7 @@ export default function App() {
         } else if (erros === 6) {
             setImagem(forca6)
         }
+
         return (<div className="forca">
             <img src={imagem} alt="" />
         </div>)
