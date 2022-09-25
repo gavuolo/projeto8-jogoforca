@@ -133,3 +133,18 @@ input{
     -webkit-user-select: none;
     margin: 1%;
 }
+
+.enviar-desabilitado{
+    width: 40px;
+    height: 50px;
+    background-color: rgba(94, 99, 94, 0.9);
+    border-radius: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+.botao-desabilitado{
+    background-color: #333333;
+}
