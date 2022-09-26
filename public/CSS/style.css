@@ -148,3 +148,9 @@ input{
 .botao-desabilitado{
     background-color: #787878;
 }
+.perdeu{
+    color: red;
+}
+.acertou{
+    color: green;
+}
